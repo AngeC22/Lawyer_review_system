@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client",
+    "e2e"
+  ],
+  "scripts": {
+    "build:client": "yarn workspace lawyer_review_system-client build",
+    "dev": "yarn workspace lawyer_review_system-server dev",
+    "dev:debug": "yarn workspace lawyer_review_system-server dev:debug",
+    "heroku-postbuild": "yarn workspace lawyer_review_system-client build",
+    "start": "yarn workspace lawyer_review_system-server start",
+    "dev:cypress": "yarn workspace lawyer_review_system-server dev:e2e",
+    "e2e:open": "yarn workspace lawyer_review_system-e2e e2e:open",
+    "e2e:run": "yarn workspace lawyer_review_system-e2e e2e:run"
+  },
+  "engines": {
+    "node": "^16.18"
+  }
+}
