@@ -8,9 +8,13 @@
 exports.up = async (knex) => {
   knex.schema.createTable("lawyers", (table) => {
     table.bigIncrements("id").primary();
-    table.bigInteger("specialty").notNullable().unsigned();
-    table.bigInteger("language").notNullable();
-    table.bigInteger("location").notNullable();
+    table.string("name").notNullable();
+    table.string("lawFirmUrl").notNullable();
+    table.string("educationBackground").notNullable();
+    table.string("workExperience").notNullable();
+    table.string("specialty").notNullable();
+    table.string("language").notNullable();
+    table.string("location").notNullable();
     table.bigInteger(reviewId).references(reviews.id).notNullable().unsigned();
     table.timestamp("createAt").notNullable().defaultTo(knex.fn.now());
   });

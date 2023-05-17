@@ -2,6 +2,8 @@
 const Bcrypt = require("bcrypt");
 const unique = require("objection-unique");
 const Model = require("./Model");
+const Review = require("./Review");
+const Lawyer = require("./Lawyer");
 
 const saltRounds = 10;
 
@@ -32,6 +34,33 @@ class User extends uniqueFunc(Model) {
         username: { type: "string" },
         admin: { type: "boolean" },
         cryptedPassword: { type: "string" },
+      },
+    };
+  }
+
+  static get relationMappings() {
+    const { Review, Lawyer } = require("./index");
+
+    return {
+      reviews: {
+        relation: Model.HasManyRelation,
+        modelClass: Review,
+        join: {
+          from: "users.id",
+          to: "reviews.userId",
+        },
+      },
+      Lawyers: {
+        relation: Model.ManyToManyRelation,
+        modelClass: Lawyer,
+        join: {
+          from: "users.id",
+          through: {
+            from: "reviews.userId",
+            to: "reviews.lawyerId",
+          },
+          to: "lawyers.id",
+        },
       },
     };
   }
