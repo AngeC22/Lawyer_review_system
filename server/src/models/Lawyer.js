@@ -1,6 +1,8 @@
 const Model = require("./Model");
-const Review = require("./Review");
 
+// const Review = require("./Revie
+// for relationMappings look back at week 6 material
+// the require statements ened to be defined in the `relationmappings()`
 class Lawyer extends Model {
   static get tableName() {
     return "lawyers";
@@ -9,48 +11,14 @@ class Lawyer extends Model {
   static get jsonSchema() {
     return {
       type: "object",
-      required: [
-        "name",
-        "lawFirmUrl",
-        "educationBackground",
-        "workExperience",
-        "specialty",
-        "language",
-        "location",
-      ],
+      required: ["name", "url", "educationBackground", "workExperience", "language", "location"],
       properties: {
         name: { type: "string" },
-        lawFirmUrl: { type: "string" },
+        url: { type: "string" },
         educationBackground: { type: "string" },
         workExperience: { type: "string" },
-        specialty: { type: "string" },
         language: { type: "string" },
         location: { type: "string" },
-      },
-    };
-  }
-
-  static get relationMappings() {
-    return {
-      reviews: {
-        relation: Model.HasManyRelation,
-        modelClass: Review,
-        join: {
-          from: "lawyers.id",
-          to: "reviews.lawyerId",
-        },
-      },
-      users: {
-        relation: Model.ManyToManyRelation,
-        modelClass: User,
-        join: {
-          from: "lawyers.id",
-          through: {
-            from: "reviews.lawyerId",
-            to: "reviews.userId",
-          },
-          to: "users.id",
-        },
       },
     };
   }
