@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { connection } from "../boot.js";
-import LawyerSeeder from "./LawyerSeeder.js";
+import LawyerSeeder from "./seeders/LawyerSeeder.js";
 
 class Seeder {
   static async seed() {
