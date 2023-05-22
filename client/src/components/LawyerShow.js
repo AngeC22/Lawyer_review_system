@@ -4,6 +4,7 @@ const LawyerShow = (props) => {
   const [lawyerShow, setLawyerShow] = useState({
     id: "",
     name: "",
+    imageUrl: "",
     url: "",
     specialty: "",
     educationBackground: "",
@@ -34,7 +35,10 @@ const LawyerShow = (props) => {
   return (
     <div className="show-page">
       <h3 className="show-title">{lawyerShow.name}</h3>
-      <img src={lawyerShow.imageUrl} alt={lawyerShow.name} />
+      <img
+        src="https://assets3.thrillist.com/v1/image/3073679/1200x630/flatten;crop_down;webp=auto;jpeg_quality=70"
+        alt={lawyerShow.name}
+      />
       <a href={lawyerShow.url} target="_blank" rel="noreferrer" className="siteLink">
         Check Out This Cool Lawyer
       </a>

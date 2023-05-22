@@ -6,6 +6,8 @@ class LawyerSeeder {
         name: "John Smith",
         id: "3",
         url: "http",
+        imageUrl:
+          "https://assets3.thrillist.com/v1/image/3073679/1200x630/flatten;crop_down;webp=auto;jpeg_quality=70",
         location: "Los Angeles, CA",
         language: "English, Spanish",
         educationBackground: "J.D. from UCLA School of Law",

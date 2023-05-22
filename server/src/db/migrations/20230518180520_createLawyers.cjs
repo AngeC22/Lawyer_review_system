@@ -10,6 +10,7 @@ exports.up = async (knex) => {
     table.bigIncrements("id");
     table.string("name").notNullable();
     table.string("url").notNullable();
+    table.string("imageUrl");
     table.string("specialty");
     table.string("educationBackground").notNullable();
     table.string("language").notNullable();

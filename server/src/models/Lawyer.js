@@ -14,6 +14,7 @@ class Lawyer extends Model {
       required: ["name", "url", "educationBackground", "workExperience", "language", "location"],
       properties: {
         name: { type: "string" },
+        imageUrl: { type: "string" },
         url: { type: "string" },
         educationBackground: { type: "string" },
         workExperience: { type: "string" },
