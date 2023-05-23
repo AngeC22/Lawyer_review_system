@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import ReviewContent from "./ReviewContent.js";
+import ReviewForm from "./ReviewForm.js";
 
 const LawyerShow = (props) => {
   const [lawyerShow, setLawyerShow] = useState({
@@ -49,6 +51,7 @@ const LawyerShow = (props) => {
         <li>location: {lawyerShow.location}</li>
         <li>educationBackground: {lawyerShow.educationBackground}</li>
       </dl>
+      <ReviewContent reviews={lawyerShow.reviews} />
     </div>
   );
 };

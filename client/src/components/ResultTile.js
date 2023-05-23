@@ -57,7 +57,7 @@ const ResultTile = (props) => {
       <p>{props.result.formatted_address}</p>
       <p>{props.result.rating} / 5</p>
       {showInfomap}
-      <Link to={`/review/${props.result.formatted_address}`}>Write Review</Link>
+      <Link to={`/review/${props.result.name}`}>Write Review</Link>
     </div>
   );
 };

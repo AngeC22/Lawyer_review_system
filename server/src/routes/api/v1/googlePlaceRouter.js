@@ -8,8 +8,9 @@ const getGoogleInfo = async (googlePlaceId) => {
     const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${googlePlaceId}&fields=name,formatted_address,reviews,rating,geometry/location,editorial_summary&key=AIzaSyDIra1juLYvG4k4dRXvlnyna2_Xxvh35-A`;
     const apiResponse = await got(url);
     const parsedBody = await JSON.parse(apiResponse.body);
+    console.log(parsedBody.result.id);
     const responseReviews = parsedBody.result.reviews;
-    console.log("reponseReviews:", responseReviews);
+    // console.log("reponseReviews:", responseReviews);
     const returnedGoogleInfo = [];
     console.log("returnedGoogleInfo:", returnedGoogleInfo);
     responseReviews.forEach((result) => {

@@ -12,7 +12,7 @@ const MapSearch = (props) => {
   };
 
   return (
-    <>
+    <div className="searchButtonContainer">
       <label htmlFor="search">
         <input id="search" type="text" defaultValue={props.searchQuery} onChange={handleChange} />
       </label>
@@ -20,7 +20,7 @@ const MapSearch = (props) => {
       <button className="button" onClick={handleSearch}>
         Search
       </button>
-    </>
+    </div>
   );
 };
 

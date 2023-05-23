@@ -10,8 +10,8 @@ const getLawFirmData = async () => {
   try {
     const url = "https://maps.googleapis.com/maps/api/place/textsearch/json";
     const queryParams = {
-      query: "law firm", // Modify this query parameter according to your requirements
-      key: "AIzaSyDIra1juLYvG4k4dRXvlnyna2_Xxvh35-A", // Replace with your actual API key
+      query: "law firm",
+      key: process.env.GOOGLE_MAP_APIKEY,
     };
     const apiResponse = await got(url, { searchParams: queryParams });
     const parsedBody = JSON.parse(apiResponse.body);
@@ -35,7 +35,7 @@ googleMapRouter.get("/lawfirms", async (req, res) => {
           location: "37.7749,-122.4194", // Example location (latitude, longitude)
           radius: "500",
           type: "lawyer",
-          key: "YOUR_API_KEY", // Replace with your actual Google Maps API key
+          key: process.env.GOOGLE_MAP_APIKEY, // Replace with your actual Google Maps API key
         },
       }
     );

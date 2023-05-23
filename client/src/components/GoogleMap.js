@@ -153,7 +153,7 @@ const AdvancedJsApiLoaderGoogleMap = (props) => {
   }, [searchLocation]);
 
   return (
-    <>
+    <div className="SearchResultContainer">
       {searchBox}
 
       {status ? (
@@ -163,6 +163,7 @@ const AdvancedJsApiLoaderGoogleMap = (props) => {
           <MapSearch setQuery={setSearchLocation} />
         </div>
       ) : null}
+      <MapSearch searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
       <div className="grid-x">
         <div className="cell small-4">
@@ -175,23 +176,20 @@ const AdvancedJsApiLoaderGoogleMap = (props) => {
                   <p>Loading law firm data...</p>
                 )}
                 <p className="error">{error}</p>
-
-                <MapSearch searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
               </div>
-              <div id="map" style={{ height: 400 }}></div>
+              <div id="map" style={{ height: "100vh" }}></div>
             </div>
           ) : (
-            <h3>Map Loading while finding your location...</h3>
+            <p>Map Loading while finding your location...</p>
           )}
         </div>
         <div className="cell-small-3">
           <div className="cell-small-4">
-            <h2>Result List</h2>
             <ResultList searchResults={searchResults} />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

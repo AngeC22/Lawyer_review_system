@@ -10,6 +10,7 @@ const clientRoutes = [
   "/lawyers/:id",
   "/:place_id",
   "/review/new",
+  "/review",
 ];
 const authedClientRoutes = ["/profile"];
 

@@ -6,11 +6,11 @@ const LawyerTile = (props) => {
 
   return (
     <Link to={`/lawyers/${lawyer.id}`} className="lawyer-tile">
+      <p>{lawyer.name}</p>
       <img
         src="https://static.onecms.io/wp-content/uploads/sites/6/2011/03/lincoln-lawyer_320.jpg"
         alt={lawyer.name}
       />
-      <p>{lawyer.name}</p>
     </Link>
   );
 };

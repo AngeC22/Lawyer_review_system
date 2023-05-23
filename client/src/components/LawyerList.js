@@ -23,14 +23,18 @@ const LawyerList = () => {
   }, []);
 
   const lawyerItems = lawyerList.map((lawyer) => {
-    return <LawyerTile key={lawyer.id} lawyer={lawyer} />;
+    return (
+      <li>
+        <LawyerTile key={lawyer.id} lawyer={lawyer} />
+      </li>
+    );
   });
 
   return (
     <div className="hear">
       <h1 className="hear">These lawyer would like to help you</h1>
       <h5>Check out other's feedback</h5>
-      <div className="lawyer-list">{lawyerItems}</div>
+      <ol className="lawyer-list">{lawyerItems}</ol>
     </div>
   );
 };

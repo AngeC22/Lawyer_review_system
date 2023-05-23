@@ -14,7 +14,7 @@ import "../assets/scss/main.scss";
 import LawyerShow from "./LawyerShow";
 import GoogleMap from "./GoogleMap.js";
 import ReviewForm from "./ReviewForm.js";
-import Review from "./Review";
+import ReviewContent from "./ReviewContent";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -37,21 +37,24 @@ const App = (props) => {
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/">
-          <div className="container">
-            <img src={pic1} alt="Image" />
+          <div className="app-container">
+            <div className="container">
+              <img src={pic1} alt="Image" />
 
-            <div className="text-overlay">
-              <h2>Get help with all of your legal needs</h2>
+              <div className="text-overlay">
+                <h2>Get help with all of your legal needs</h2>
+              </div>
             </div>
+            <input onKeyUp={(e) => setSearchQuery(e.target.value)} type="text"></input>
+            <Link to={"/searchResult/" + searchQuery}>search</Link>
+            <LawyerList />
           </div>
-          <input onKeyUp={(e) => setSearchQuery(e.target.value)} type="text"></input>
-          <Link to={"/searchResult/" + searchQuery}>search</Link>
-          <LawyerList />
         </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
-        <Route exact path="/review/new" component={ReviewForm} />
+        <Route exact path="/review/:firm" component={ReviewForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
         <Route exact path="/lawyers/:id" component={LawyerShow} />
+
         <Route path="/searchResult/:searchQueryParam" component={GoogleMap} />
         <Route
           exact
