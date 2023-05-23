@@ -12,3 +12,74 @@
   -moz-tab-size: 4;
   tab-size: 4;
 }
+.body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  position: relative;
+  display: flex;
+  //flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //width: 100vw;
+  height: auto; /* Adjust the height as needed */
+  background-image: url("/public/pic1.jpeg");
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center;
+}
+
+.app-container, .SearchResultContainer{
+  padding: 16px;
+}
+
+.searchButtonContainer{
+  display: flex;
+  & label {
+    flex: 1 !important
+  }
+}
+
+.text-overlay{
+  position: absolute;
+  top: 40%;
+  left: 72%;
+  transform: translate(-100%,-100%);
+  white-space: nowrap;
+  text-align: center;
+  
+}
+img{
+  width:auto;
+  height: 500px;
+  //padding: 100px;
+  object-fit: cover;
+}
+
+.background{
+  background-color:grey;
+  text-align: center;
+  padding: 10px;
+  width: 270vh;
+  
+}
+// .cell-small-4 {
+//   padding: 10px;
+//   text-align: center;
+//   height: 100px;
+// }
+// .cell-small-3 {
+//   text-align: center;
+//   position: absolute;
+//   content: "";
+//   clear: both;
+//   display: table;  
+// }
+.grid-x{
+  display:flex;
+  flex-wrap: nowrap;
+
+}

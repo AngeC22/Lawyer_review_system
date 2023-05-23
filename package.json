@@ -18,5 +18,30 @@
   },
   "engines": {
     "node": "^16.18"
-  }
+  },
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^1.15.1",
+    "axios": "^1.4.0",
+    "express": "^4.18.2",
+    "got": "^12.6.0",
+    "pg": "^8.11.0",
+    "sequelize": "^6.31.1"
+  },
+  "name": "lawyer_review_system",
+  "description": "Lawyer Review System This is the README file for the Lawyer Review System project, which aims to provide users with the ability to view a list of lawyers based on location and specialty, as well as add ratings for lawyers to share their experiences and help others make informed decisions. The project is built using React, Express, API endpoints, and utilizes the yarn package manager for installation and development.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngeC22/Lawyer_review_system.git"
+  },
+  "keywords": [
+    "1234"
+  ],
+  "author": "anzixun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AngeC22/Lawyer_review_system/issues"
+  },
+  "homepage": "https://github.com/AngeC22/Lawyer_review_system#readme"
 }

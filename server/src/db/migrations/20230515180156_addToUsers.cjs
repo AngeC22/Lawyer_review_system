@@ -17,7 +17,7 @@ exports.up = async (knex) => {
  */
 exports.down = (knex) => {
   return knex.schema.alterTable("users", (table) => {
-    table.dropColum("username");
-    table.dropColum("admin");
+    table.dropColumn("username");
+    table.dropColumn("admin");
   });
 };
