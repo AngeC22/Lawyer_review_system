@@ -1,4 +1,4 @@
-# Lawyer_review_system
+# Lawyer Review System
 
 Lawyer Review System
 This is the README file for the Lawyer Review System project, which aims to provide users with the ability to view a list of lawyers based on location and specialty, as well as add ratings for lawyers to share their experiences and help others make informed decisions. The project is built using React, Express, API endpoints, and utilizes the yarn package manager for installation and development.
